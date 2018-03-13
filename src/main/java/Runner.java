@@ -2,6 +2,8 @@ import db.DBHelper;
 import models.File;
 import models.Folder;
 
+import java.util.List;
+
 public class Runner {
 
     public static void main(String[] args) {
@@ -20,7 +22,15 @@ public class Runner {
         File file4 = new File("week_05_project_db", "java", 922, folder2);
         DBHelper.save(file4);
 
+        DBHelper.delete(file4);
 
+        File file5 = new File("week_06_project_db", "java", 667, folder2);
+        DBHelper.save(file5);
+
+        file5.setName("week_05_project_db");
+        DBHelper.update(file5);
+
+        List<File> allFiles = DBHelper.getAll(File.class);
 
 
     }
