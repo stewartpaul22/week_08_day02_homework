@@ -32,6 +32,8 @@ public class Runner {
 
         List<File> allFiles = DBHelper.getAll(File.class);
 
+        List<File> filesInFolder = DBHelper.getFilesInFolder(folder2);
+
 
     }
 
