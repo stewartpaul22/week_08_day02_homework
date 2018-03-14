@@ -38,6 +38,12 @@ public class Runner {
 
         List<File> filesInFolder = DBHelper.getFilesInFolder(folder2);
 
+        List<Owner> allOwners = DBHelper.getAll(Owner.class);
+
+        List<Folder> allFolders = DBHelper.getAll(Folder.class);
+
+        List<Folder> foldersForOwner = DBHelper.getFoldersForOwner(owner1);
+
 
     }
 
