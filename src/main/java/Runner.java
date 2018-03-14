@@ -1,6 +1,7 @@
 import db.DBHelper;
 import models.File;
 import models.Folder;
+import models.Owner;
 
 import java.util.List;
 
@@ -8,9 +9,12 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        Folder folder1 = new Folder("homework");
+        Owner owner1 = new Owner("Jeff Bridges", "thedude");
+        DBHelper.save(owner1);
+
+        Folder folder1 = new Folder("homework", owner1);
         DBHelper.save(folder1);
-        Folder folder2 = new Folder("projects");
+        Folder folder2 = new Folder("projects", owner1);
         DBHelper.save(folder2);
 
         File file1 = new File("day_01_homework", "java", 1056, folder1);
